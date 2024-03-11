@@ -1,19 +1,18 @@
-import './App.css'
-import '@radix-ui/themes/styles.css';
+import { GlobalStyle } from "./Global";
 
-// 2 - reproveitamento de estrutura 
+// 2 - reproveitamento de estrutura
 // ja que os caminhos vão ser todos renderizados apartir de outelet
-import { Outlet } from 'react-router-dom'
+import { Outlet } from "react-router-dom";
 
 function App() {
-
-
   return (
-    <div className='App'>
-      
-      <Outlet/>
+    <div className="Global">
+      <GlobalStyle/>
+      <Outlet />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
+
+
