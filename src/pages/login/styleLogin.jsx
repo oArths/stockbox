@@ -1,4 +1,12 @@
 import styled from "styled-components";
+import * as M  from "@mui/material"
+
+
+export const Avatar = styled(M.Avatar)`
+background-color: blueviolet;
+color: black;
+`
+
 
 export const Main = styled.div`
   margin: 5px;
