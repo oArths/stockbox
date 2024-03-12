@@ -1,6 +1,7 @@
 import * as S from "../login/styleLogin";
 import login from "../../assets/images/Login.svg";
 import Input from "../../components/inputs/index";
+// import * as a from '@mui/material/colors';
 
 const Login = () => {
   return (
@@ -13,6 +14,8 @@ const Login = () => {
               Entre com sua conta e tenha acesso a um mundo de possibilidades
             </S.SubTitle>
           </S.TitleContainer>
+
+          {/* <S.a.Avatar sx={{ bgcolor: deepOrange[500] }}>aaa</S.a.Avatar> */}
 
           <S.InputContainer>
             <Input Title="E-mail" placeholder="email@gmail.com" />

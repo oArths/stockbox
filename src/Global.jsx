@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-  body{
+  *{
 	margin: 0;
 	padding: 0;
     font-family: 'Exo 2', sans-serif;
@@ -13,8 +13,7 @@ export const GlobalStyle = createGlobalStyle`
   img, ol, ul, li,
   table, caption, tbody, tfoot, thead, tr, th, td,
   figure {
-    margin: 0;
-    padding: 0;
+    
     border: 0;
     font-size: 100%;
     vertical-align: baseline;
