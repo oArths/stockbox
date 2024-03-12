@@ -1,12 +1,20 @@
-import { type } from "@testing-library/user-event/dist/type";
 import * as  S  from "./style"
+import * as M from "@mui/material/";
 
 
-const Input = ({Title, placeholder, type}) => {
+
+const Input = ({ id, label, variant, size, fullWidth, key, type}) => {
     return(
         <S.Container>
-              <S.TextTitle>{Title}</S.TextTitle>
-              <S.TextInput type={type || "text"} placeholder={placeholder || "Digite seu email"} />
+              <M.TextField
+                    id={id || "outlined-basic"}
+                    label={label || "Nome"}
+                    variant={ variant || "outlined"}
+                    size={size ||"small"}
+                    fullWidth={fullWidth || ""}
+                    key={key || "1"}
+                    type={type || "email"}
+                />
         </S.Container>
     )
 } 
