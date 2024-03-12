@@ -1,12 +1,12 @@
 import * as S from "./style";
-import * as M from "@mui/material/";
+// import * as M from "@mui/material/";
 
-const Button = ({ Title, color, variant, size, sx }) => {
+const Button = ({ Title, color, variant, size, disableRipple }) => {
   return (
     <S.Container>
-      <M.Button variant={variant || "contained"} size={size || "large"}>
+      <S.Button variant={variant || "contained"} size={size || "large"} disableRipple={disableRipple || ""}>
         {Title}
-      </M.Button>
+      </S.Button>
     </S.Container>
   );
 };

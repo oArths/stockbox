@@ -31,6 +31,7 @@ const Login = () => {
               Title="Entar"
               variant="contained"
               size="large"
+              disableRipple
               // sx={{
               //   backgroundColor: (theme) => theme.palette.ochre.main,
               //   color: (theme) => theme.palette.ochre.contrastText,
