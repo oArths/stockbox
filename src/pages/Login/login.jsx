@@ -1,12 +1,12 @@
 import * as S from "./styleLogin";
-import login from "../../assets/images/Login.svg";
+import ILogin from "../../assets/images/login.svg";
 import Input from "../../components/inputs/index";
-import Button from "../../components/button/index";
+import Button  from "../../components/button/index";
 
 const Login = () => {
   return (
     <S.Main>
-      <S.Container>
+      {/* <S.Container> */}
         <S.Login>
           <S.TitleContainer>
             <S.Title>Login</S.Title>
@@ -14,30 +14,14 @@ const Login = () => {
               Entre com sua conta e tenha acesso a um mundo de possibilidades
             </S.SubTitle>
           </S.TitleContainer>
-
           <S.InputContainer>
-            <Input label="E-mail" size="small" key="1" fullWidth />
-            <Input
-              label="Senha"
-              size="small"
-              key="2"
-              type="password"
-              fullWidth
-            />
+            <Input Title="E-mail" placeholder="email@gmail.com" />
+            <Input Title="Senha" placeholder="Admin@123" type="password" />
           </S.InputContainer>
 
           <S.ButtonContainer>
-            <Button
-              Title="Entar"
-              variant="contained"
-              size="large"
-              disableRipple
-              // sx={{
-              //   backgroundColor: (theme) => theme.palette.ochre.main,
-              //   color: (theme) => theme.palette.ochre.contrastText,
-              // }}
-            />
-            {/* <S.Button>Entrar</S.Button> */}
+            <Button Title="Entrar"/>
+          
             <S.SubText>Se cadastre ou recuperea sua conta</S.SubText>
           </S.ButtonContainer>
           <S.TermsContainer>
@@ -47,9 +31,10 @@ const Login = () => {
             </S.Terms>
           </S.TermsContainer>
         </S.Login>
-
-        <S.Img src={login} alt="Imagem de um estoque" />
-      </S.Container>
+        <S.ImageConrainer>
+        <S.Img src={ILogin} alt="Imagem de um estoque" />
+        </S.ImageConrainer>
+      {/* </S.Container> */}
     </S.Main>
   );
 };

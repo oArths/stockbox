@@ -1,7 +1,6 @@
-import { GlobalStyle } from "./Global";
+import "./Global.jsx"
+import { Theme } from '@radix-ui/themes';
 
-import theme from "./Theme";
-import { ThemeProvider } from "@mui/material/styles";
 
 // 2 - reproveitamento de estrutura
 // ja que os caminhos vão ser todos renderizados apartir de outelet
@@ -9,12 +8,11 @@ import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    // <div>
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
+    <div>
+      <Theme>
       <Outlet />
-    </ThemeProvider>
-    // </div>
+      </Theme>
+     </div>
   );
 }
 

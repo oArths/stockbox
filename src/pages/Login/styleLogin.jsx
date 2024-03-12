@@ -1,14 +1,34 @@
 import styled from "styled-components";
 
+
 export const Main = styled.div`
-  margin: 5px;
-`;
-export const Container = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 10px;
+  align-items: start;
+  justify-content: center;
+  overflow: hidden !important;
+  max-height: 100vh;
+  
 `;
+// export const Container = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   gap: 10px;
+//   overflow: hidden;
+
+  
+//   `;
+export const ImageConrainer = styled.div`
+max-width: 100vh;
+height: auto;
+
+`;
+
+  export const Img = styled.img`
+  max-width: 100%;
+  max-height: auto;
+`;
+
 
 export const Login = styled.div`
   display: flex;
@@ -36,8 +56,7 @@ export const SubTitle = styled.text`
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  width: 300px;
+  gap: 20px;
 `;
 
 export const ButtonContainer = styled.div`
@@ -46,15 +65,9 @@ export const ButtonContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
+  width: 250px;
 `;
-export const Button = styled.button`
-  width: 300px;
-  height: 45px;
-  font-size: 18px;
-  color: white;
-  background-color: #121212;
-  border-radius: 10px;
-`;
+
 export const SubText = styled.text`
   font-size: 12px;
 `;
@@ -66,8 +79,4 @@ export const TermsContainer = styled.div`
 
 export const Terms = styled.text`
   font-size: 12px;
-`;
-export const Img = styled.img`
-  width: 989px;
-  height: 620px;
 `;

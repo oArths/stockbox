@@ -1,16 +1,24 @@
 import styled from "styled-components";
-import * as M from "@mui/material/";
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background-color: brown;
-  color: #880a0a;
-`;
-export const Button = styled(M.ButtonBase)`
-  background-color: brown;
-  width: 500px;
+export const Button = styled.button`
+  background-color: #000000;
+  width: 100%;
   font-size: 20px;
-  color: #880a0a;
+  color: #fafafa;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  &:active {
+    transform: scale(98%); 
+    transition: transform 0.1s ease;
+    background-color: #212121;
+
+  }
+  &:hover{
+    transition: transform 0.3s ease;
+    background-color: #000000;
+
+    
+  }
 `;

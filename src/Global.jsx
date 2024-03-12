@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import '@radix-ui/themes/styles.css';
 
 
 export const GlobalStyle = createGlobalStyle`
@@ -10,3 +11,4 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 100%;
     vertical-align: baseline;
   }`
+

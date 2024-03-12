@@ -1,8 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-
-
-// 1 - configurando o router
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 // componetes que seram renderizados 
