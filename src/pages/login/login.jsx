@@ -1,11 +1,11 @@
-import * as S from "../login/styleLogin";
-import login from "../../assets/images/Login.svg";
+import * as S from "./styleLogin";
+import Button from "../../components/button";
+import login from "../../assets/images/login.svg";
 import Input from "../../components/inputs/index";
 
 const Login = () => {
   return (
     <S.Main>
-      <S.Container>
         <S.Login>
           <S.TitleContainer>
             <S.Title>Login</S.Title>
@@ -20,7 +20,7 @@ const Login = () => {
           </S.InputContainer>
 
           <S.ButtonContainer>
-            <S.Button>Entrar</S.Button>
+            <Button Title="Entar"/>
             <S.SubText>Se cadastre ou recuperea sua conta</S.SubText>
           </S.ButtonContainer>
           <S.TermsContainer>
@@ -30,9 +30,9 @@ const Login = () => {
             </S.Terms>
           </S.TermsContainer>
         </S.Login>
-
-        <S.Img src={login} alt="Imagem de um estoque" />
-      </S.Container>
+        <S.ImgContainer>
+          <S.Img src={login} alt="Imagem de um estoque" />
+        </S.ImgContainer>
     </S.Main>
   );
 };

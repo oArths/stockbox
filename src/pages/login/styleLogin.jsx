@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const Main = styled.div`
-  margin: 5px;
-`;
-export const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 10px;
+  align-items: center;
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
 `;
 
 export const Login = styled.div`
@@ -17,7 +17,23 @@ export const Login = styled.div`
   background-color: white;
   gap: 40px;
   width: 450px;
+  height: 100vh;
 `;
+export const ImgContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border: none;
+  outline: none;
+`;
+export const Img = styled.img`
+  margin-right: 1vh;
+  max-width: 90%;
+  min-width: 100px; /* Altere para o tamanho desejado */
+  min-height: 50px;
+  height: auto;
+`;
+
 export const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -45,14 +61,7 @@ export const ButtonContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
-`;
-export const Button = styled.button`
   width: 300px;
-  height: 45px;
-  font-size: 18px;
-  color: white;
-  background-color: #121212;
-  border-radius: 10px;
 `;
 export const SubText = styled.text`
   font-size: 12px;
@@ -65,8 +74,4 @@ export const TermsContainer = styled.div`
 
 export const Terms = styled.text`
   font-size: 12px;
-`;
-export const Img = styled.img`
-  width: 989px;
-  height: 620px;
 `;
