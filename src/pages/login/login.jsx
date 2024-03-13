@@ -1,9 +1,11 @@
-import * as S from "./styleLogin";
+import * as S from "./styles";
 import Button from "../../components/button";
 import login from "../../assets/images/login.svg";
 import Input from "../../components/inputs/index";
-
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+
+  const nav = useNavigate();
   return (
     <S.Main>
       <S.Login>
@@ -15,13 +17,14 @@ const Login = () => {
         </S.TitleContainer>
 
         <S.InputContainer>
-          <Input Title="E-mail" placeholder="email@gmail.com" />
-          <Input Title="Senha" placeholder="Admin@123" type="password" />
+          <Input label="E-mail"  />
+          <Input label="Senha"type="password" />
         </S.InputContainer>
 
         <S.ButtonContainer>
-          <Button Title="Entar" />
-          <S.SubText>Se cadastre ou recuperea sua conta</S.SubText>
+          <Button Title="Entrar" />
+            <S.SubText onClick={() => {nav("/forgot")}}
+                    > Se cadastre ou recuperea sua conta</S.SubText>
         </S.ButtonContainer>
         <S.TermsContainer>
           <S.Terms>

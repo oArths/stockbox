@@ -10,12 +10,15 @@ export const Button = styled.button`
   padding: 10px;
   border-radius: 5px;
   border: none;
+  cursor: pointer;
+  &:hover {
+    transition: transform 0.3s ease;
+    transform: scale(102%);
+  }
   &:active {
     transform: scale(98%);
     transition: transform 0.3s ease;
     background-color: #000000;
-  }
-  &:hover {
-    transition: transform 0.3s ease;
+    
   }
 `;
