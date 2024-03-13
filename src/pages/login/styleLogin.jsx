@@ -12,33 +12,51 @@ export const Main = styled.div`
 
 export const Login = styled.div`
   display: flex;
+  flex: 2;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
   background-color: white;
   gap: 40px;
-  width: 450px;
+  max-width: 30% ;
   height: 100vh;
 `;
 export const ImgContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  width: 70%;
   border: none;
   outline: none;
+  
+
+`;
+export const ImgtextContainer = styled.div`
+  max-width: 30%;
+  max-height: 20%;
+  position: absolute;
+  bottom: 15%;
+  margin-left: 45px;
+`;
+export const TextImage = styled.text`
+  font-size: 34px;
+  color: white;
 `;
 export const Img = styled.img`
-  margin-right: 1vh;
-  max-width: 90%;
-  min-width: 100px; /* Altere para o tamanho desejado */
+  max-width: 98%;
+  max-height: auto;
+  min-width: 100px;
   min-height: 50px;
-  height: auto;
+  border: none;
+  outline: none;
+  border-radius: 10px;
 `;
 
 export const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   margin-top: 50px;
-  width: 300px;
+  width: 60%;
   gap: 30px;
 `;
 export const Title = styled.text`
@@ -52,7 +70,8 @@ export const SubTitle = styled.text`
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  width: 60%;
+  gap: 30px;
 `;
 
 export const ButtonContainer = styled.div`
@@ -61,10 +80,11 @@ export const ButtonContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
-  width: 300px;
+  width: 60%;
+  height: 8%;
 `;
 export const SubText = styled.text`
-  font-size: 12px;
+  font-size: 13px;
 `;
 export const TermsContainer = styled.div`
   margin-top: 70px;
@@ -73,5 +93,5 @@ export const TermsContainer = styled.div`
 `;
 
 export const Terms = styled.text`
-  font-size: 12px;
+  font-size: 13px;
 `;

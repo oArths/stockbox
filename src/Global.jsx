@@ -10,4 +10,5 @@ export const GlobalStyle = createGlobalStyle`
     outline: none;
     font-size: 100%;
     vertical-align: baseline;
-  }`;
+    transition: transform 0.3s ease; 
+     }`;
