@@ -8,6 +8,7 @@ export const Main = styled.div`
   max-width: 100%;
   height: auto;
   overflow: hidden;
+  user-select: none;
 `;
 
 export const Login = styled.div`
@@ -18,7 +19,7 @@ export const Login = styled.div`
   justify-content: space-around;
   background-color: white;
   gap: 40px;
-  max-width: 30% ;
+  max-width: 30%;
   height: 100vh;
 `;
 export const ImgContainer = styled.div`
@@ -36,7 +37,7 @@ export const ImgtextContainer = styled.div`
   margin-left: 45px;
 `;
 export const TextImage = styled.text`
-  font-size: 34px;
+  font-size: 200%;
   color: white;
 `;
 export const Img = styled.img`
@@ -81,8 +82,12 @@ export const ButtonContainer = styled.div`
   width: 65%;
   height: 8%;
 `;
-export const SubText = styled.button`
-  font-size: 13px;
+export const SubText = styled.div`
+  font-size: 14px;
+`;
+export const Link = styled.a`
+  font-size: 15px;
+  color: #4e8fd9;
 `;
 export const TermsContainer = styled.div`
   margin-top: 70px;

@@ -1,21 +1,12 @@
-import * as  S  from "./style"
-import * as M from "@mui/material/";
+import React from "react";
+import * as S from "./style";
 
+const Input = ({ type,placeholder }) => {
+  return (
+      <S.Input 
+      type={type || "text"} 
+      placeholder={placeholder || "Nome"}/>
+  );
+};
 
-
-const Input = ({ id, label, variant, size, fullWidth, key, type}) => {
-    return(
-        <S.Container>
-              <M.TextField
-                    id={id || "outlined-basic"}
-                    label={label || "Nome"}
-                    variant={ variant || "outlined"}
-                    size={size ||"small"}
-                    fullWidth={fullWidth || ""}
-                    key={key || "1"}
-                    type={type || "email"}
-                />
-        </S.Container>
-    )
-} 
 export default Input;

@@ -4,7 +4,6 @@ import login from "../../assets/images/login.svg";
 import Input from "../../components/inputs/index";
 import { useNavigate } from "react-router-dom";
 const Login = () => {
-
   const nav = useNavigate();
   return (
     <S.Main>
@@ -12,19 +11,27 @@ const Login = () => {
         <S.TitleContainer>
           <S.Title>Login</S.Title>
           <S.SubTitle>
-            Entre com sua conta e tenha acesso a um mundo de possibilidades home
+            Entre com sua conta e tenha acesso a um mundo de possibilidades.
           </S.SubTitle>
         </S.TitleContainer>
 
         <S.InputContainer>
-          <Input label="E-mail"  />
-          <Input label="Senha"type="password" />
+          <Input placeholder="E-mail" type="text" />
+          <Input placeholder="Senha" type="password" />
         </S.InputContainer>
 
         <S.ButtonContainer>
           <Button Title="Entrar" />
-            <S.SubText onClick={() => {nav("/forgot")}}
-                    > Se cadastre ou recuperea sua conta</S.SubText>
+          <S.SubText
+          >
+            Se  <S.Link onClick={() => {
+              nav("/register");
+            }}>cadastre</S.Link> ou <S.Link onClick={() => {
+              nav("/forgot");
+            }}>
+              recupere
+            </S.Link> a sua conta
+          </S.SubText>
         </S.ButtonContainer>
         <S.TermsContainer>
           <S.Terms>

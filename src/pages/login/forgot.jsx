@@ -2,26 +2,46 @@ import * as S from "./styles";
 import Button from "../../components/button";
 import login from "../../assets/images/login.svg";
 import Input from "../../components/inputs/index";
+import { useNavigate } from "react-router-dom";
 
 const Forgot = () => {
+  const nav = useNavigate();
+
   return (
     <S.Main>
       <S.Login>
         <S.TitleContainer>
           <S.Title>Esqueceu?</S.Title>
           <S.SubTitle>
-            Esqueceu a senha? Ensira suas informações e espero o email         
-            </S.SubTitle>
+            Esqueceu a senha? Insira suas informações e aguarde o email.
+          </S.SubTitle>
         </S.TitleContainer>
 
         <S.InputContainer>
-          <Input label="E-mail"  />
-          {/* <Input label="Senha"type="password" /> */}
+          <Input placeholder="E-mail" type="text" />
         </S.InputContainer>
 
         <S.ButtonContainer>
           <Button Title="Entrar" />
-          <S.SubText>Se cadastre ou recuperea sua conta</S.SubText>
+          <S.SubText>
+            Se{" "}
+            <S.Link
+              onClick={() => {
+                nav("/register");
+              }}
+            >
+              cadastre
+            </S.Link>{" "}
+            ou faça{" "}
+            <S.Link
+              onClick={() => {
+                nav("/");
+              }}
+            >
+              login
+            </S.Link>{" "}
+            em sua conta
+          </S.SubText>
         </S.ButtonContainer>
         <S.TermsContainer>
           <S.Terms>
