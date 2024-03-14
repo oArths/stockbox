@@ -10,6 +10,10 @@ export const Main = styled.div`
   overflow: hidden;
   user-select: none;
 `;
+export const Test = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 export const Login = styled.div`
   display: flex;
