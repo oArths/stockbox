@@ -10,6 +10,15 @@ export const Main = styled.div`
   overflow: hidden;
   user-select: none;
 `;
+
+export const test = styled.div`
+display:flex;
+flex-direction: column;
+`;
+export const Container= styled.div`
+display: flex;
+flex-direction: row;
+`;
 export const Test = styled.div`
   display: flex;
   flex-direction: column;

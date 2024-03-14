@@ -7,7 +7,7 @@ import App from "./App.jsx";
 import Login from "./pages/Login/login.jsx";
 import Forgot from "./pages/Login/forgot.jsx";
 import Register from "./pages/Login/register.jsx";
-import HeaderNav from "./components/headerNav/HeaderNav.jsx";
+import Dashboard from "./pages/Dashboard/dashboard.jsx";
 
 const router = createBrowserRouter([
   {
@@ -27,8 +27,8 @@ const router = createBrowserRouter([
         element: <Register />,
       },
       {
-        path: "/Header",
-        element: <HeaderNav />,
+        path: "/Dashboard",
+        element: <Dashboard />,
       },
     ],
   },

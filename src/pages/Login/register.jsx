@@ -1,7 +1,7 @@
 import * as S from "./styles";
-import Button from "../../components/button";
+import Button from "../../components/button/button";
 import login from "../../assets/images/login.svg";
-import Input from "../../components/inputs/index";
+import Input from "../../components/inputs/input";
 import { useNavigate } from "react-router-dom";
 const Register = () => {
   const nav = useNavigate();
