@@ -1,16 +1,15 @@
-import "./Global.jsx";
-import "./App.css";
-import { Theme } from "@radix-ui/themes";
+import {GlobalStyle} from "./Global.jsx";
 
 // 2 - reproveitamento de estrutura
 // ja que os caminhos vão ser todos renderizados apartir de outelet
-import { Outlet } from "react-router-dom";
+import { Outlet} from "react-router-dom";
 
 function App() {
   return (
-    <Theme>
+    <div>
+    <GlobalStyle/>
       <Outlet />
-    </Theme>
+    </div>
   );
 }
 
