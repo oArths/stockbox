@@ -1,18 +1,19 @@
 import styled from "styled-components";
 
-// export const NavContainer = styled.div`
-//   width: 240px;
+export const Container = styled.div`
+  width: 240px;
+  max-height: 900px;
+  background-color: #f4f7ff;
+  display: flex;
+  justify-content: center;
+`;
 
-//   background-color: #4470eb;
-// `;
-export const OpContainer = styled.div`
+export const OpConatiner = styled.div`
   display: flex;
   flex-direction: column;
-  text-align: center;
-  width: 240px;
+  text-align: justify;
   gap: 50px;
-  max-height: 900px;
-  background-color: #4470eb;
+  margin-top: 55px;
 `;
 export const Op = styled.text`
   display: flex;

@@ -25,5 +25,5 @@ export const IN = styled.div`
   margin-bottom: 100px;
   background-color: #d60505;
   width: 15%;
-  height: 1000px;
+  height: 100px;
 `;

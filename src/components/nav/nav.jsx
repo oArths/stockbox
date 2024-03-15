@@ -2,15 +2,15 @@ import * as S from "./style";
 
 const Nav = () => {
   return (
-    // <S.NavContainer>
-    <S.OpContainer>
+    <S.Container>
+      <S.OpConatiner>
       <S.Op>DashBoard</S.Op>
       <S.Op>Solicitações</S.Op>
       <S.Op>Controle</S.Op>
       <S.Op>Relatorios</S.Op>
       <S.Op>Catalogação</S.Op>
-    </S.OpContainer>
-    // </S.NavContainer>
+      </S.OpConatiner>
+    </S.Container>
   );
 };
 export default Nav;
