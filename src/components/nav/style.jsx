@@ -14,6 +14,7 @@ export const OpConatiner = styled.div`
   text-align: justify;
   gap: 50px;
   margin-top: 55px;
+  user-select: none;
 `;
 export const Op = styled.text`
   display: flex;
