@@ -51,11 +51,11 @@ const Forgot = () => {
         </S.TermsContainer>
       </S.Login>
       <S.ImgContainer>
-        <S.ImgtextContainer>
+        <S.ImgTextContainer>
           <S.TextImage>
             Lorem ipsum dolor sit amet consectetur adipiscing elit.
           </S.TextImage>
-        </S.ImgtextContainer>
+        </S.ImgTextContainer>
         <S.Img src={login} alt="Imagem de um estoque" />
       </S.ImgContainer>
     </S.Main>

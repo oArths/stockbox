@@ -11,19 +11,6 @@ export const Main = styled.div`
   user-select: none;
 `;
 
-export const test = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-export const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-export const Test = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
 export const Login = styled.div`
   display: flex;
   flex: 2;
@@ -42,7 +29,7 @@ export const ImgContainer = styled.div`
   border: none;
   outline: none;
 `;
-export const ImgtextContainer = styled.div`
+export const ImgTextContainer = styled.div`
   max-width: 30%;
   max-height: 20%;
   position: absolute;
@@ -66,18 +53,21 @@ export const Img = styled.img`
 export const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  text-align: left;
+  justify-content: center;
   margin-top: 50px;
   width: 65%;
   gap: 20px;
 `;
 export const Title = styled.text`
-  font-size: 60px;
+  width: 100%;
+  font-size: 55px;
   font-weight: bold;
 `;
 export const SubTitle = styled.text`
   font-size: 15px;
   color: #737373;
+  width: 100%;
 `;
 export const InputContainer = styled.div`
   display: flex;
@@ -96,11 +86,11 @@ export const ButtonContainer = styled.div`
   height: 8%;
 `;
 export const SubText = styled.div`
-  font-size: 14px;
+  font-size: 12px;
 `;
 export const Link = styled.a`
   cursor: pointer;
-  font-size: 15px;
+  font-size: 14  px;
   color: #4e8fd9;
 `;
 export const TermsContainer = styled.div`
