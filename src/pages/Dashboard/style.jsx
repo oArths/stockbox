@@ -1,5 +1,4 @@
 import styled from "styled-components";
-const alturaTela = window.innerHeight * 0.5;
 
 export const Content = styled.div`
   display: flex;

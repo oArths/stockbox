@@ -12,12 +12,12 @@ export const Main = styled.div`
 `;
 
 export const test = styled.div`
-display:flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 `;
-export const Container= styled.div`
-display: flex;
-flex-direction: row;
+export const Container = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 export const Test = styled.div`
   display: flex;
@@ -99,6 +99,7 @@ export const SubText = styled.div`
   font-size: 14px;
 `;
 export const Link = styled.a`
+  cursor: pointer;
   font-size: 15px;
   color: #4e8fd9;
 `;

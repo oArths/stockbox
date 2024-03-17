@@ -1,41 +1,53 @@
-import * as S from "../login/styleLogin";
-import login from "../../assets/images/Login.svg";
-import Input from "../../components/inputs/index";
-// import * as a from '@mui/material/colors';
-
+import * as S from "./styles";
+import Button from "../../components/button/button";
+import login from "../../assets/images/login.svg";
+import Input from "../../components/inputs/input";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+  const nav = useNavigate();
   return (
     <S.Main>
-      <S.Container>
-        <S.Login>
-          <S.TitleContainer>
-            <S.Title>Login</S.Title>
-            <S.SubTitle>
-              Entre com sua conta e tenha acesso a um mundo de possibilidades
-            </S.SubTitle>
-          </S.TitleContainer>
+      <S.Login>
+        <S.TitleContainer>
+          <S.Title>Login</S.Title>
+          <S.SubTitle>
+            Entre com sua conta e tenha acesso a um mundo de possibilidades.
+          </S.SubTitle>
+        </S.TitleContainer>
 
-          {/* <S.a.Avatar sx={{ bgcolor: deepOrange[500] }}>aaa</S.a.Avatar> */}
+        <S.InputContainer>
+          <Input placeholder="E-mail" type="text" />
+          <Input placeholder="Senha" type="password" />
+        </S.InputContainer>
 
-          <S.InputContainer>
-            <Input Title="E-mail" placeholder="email@gmail.com" />
-            <Input Title="Senha" placeholder="Admin@123" type="password" />
-          </S.InputContainer>
-
-          <S.ButtonContainer>
-            <S.Button>Entrar</S.Button>
-            <S.SubText>Se cadastre ou recuperea sua conta</S.SubText>
-          </S.ButtonContainer>
-          <S.TermsContainer>
-            <S.Terms>
-              ao se inscrever você concorda <br />
-              com nossos termos de serviço e política privada
-            </S.Terms>
-          </S.TermsContainer>
-        </S.Login>
-
+        <S.ButtonContainer>
+          <Button Title="Entrar" />
+          <S.SubText
+          >
+            Se  <S.Link onClick={() => {
+              nav("/register");
+            }}>cadastre</S.Link> ou <S.Link onClick={() => {
+              nav("/forgot");
+            }}>
+              recupere
+            </S.Link> a sua conta
+          </S.SubText>
+        </S.ButtonContainer>
+        <S.TermsContainer>
+          <S.Terms>
+            ao se acessar você concorda <br />
+            com nossos termos de <b>serviço</b> e <b>política privada</b>
+          </S.Terms>
+        </S.TermsContainer>
+      </S.Login>
+      <S.ImgContainer>
+        <S.ImgtextContainer>
+          <S.TextImage>
+            Lorem ipsum dolor sit amet consectetur adipiscing elit.
+          </S.TextImage>
+        </S.ImgtextContainer>
         <S.Img src={login} alt="Imagem de um estoque" />
-      </S.Container>
+      </S.ImgContainer>
     </S.Main>
   );
 };

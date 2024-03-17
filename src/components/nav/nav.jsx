@@ -1,14 +1,18 @@
 import * as S from "./style";
+import { useNavigate } from "react-router-dom";
+
 
 const Nav = () => {
+  const nav = useNavigate();
+
   return (
     <S.Container>
       <S.OpConatiner>
-      <S.Op>DashBoard</S.Op>
-      <S.Op>Solicitações</S.Op>
-      <S.Op>Controle</S.Op>
-      <S.Op>Relatorios</S.Op>
-      <S.Op>Catalogação</S.Op>
+        <S.Op onClick={() => {nav("/dashboard")}}>DashBoard</S.Op>
+        <S.Op onClick={() => {nav("/solicitacoes")}}>Solicitações</S.Op>
+        <S.Op onClick={() => {nav("/controle")}}>Controle</S.Op>
+        <S.Op onClick={() => {nav("/relatorios")}}>Relatorios</S.Op>
+        <S.Op onClick={() => {nav("/catalogacao")}}>Catalogação</S.Op>
       </S.OpConatiner>
     </S.Container>
   );
