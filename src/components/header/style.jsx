@@ -7,10 +7,10 @@ export const HeaderContainer = styled.div`
   width: 100%;
   height: 90px;
   background-color: #f4f7ff;
-  border-bottom: 0.5px solid rgb(182, 181, 181);
+  box-shadow: 200px 0px 10px 2px rgba(0, 0, 0, 0.2);
   user-select: none;
 `;
 export const Logo = styled.text`
-  margin-left: 20px;
+  margin-left: 27px;
   font-size: 30px;
 `;

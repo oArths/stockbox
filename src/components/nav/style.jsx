@@ -4,6 +4,7 @@ export const Container = styled.div`
   width: 240px;
   max-height: 900px;
   background-color: #f4f7ff;
+  box-shadow: 0px 12px 10px 2px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
   align-items: start;
@@ -23,11 +24,11 @@ export const Op = styled.text`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 22px;
-  padding-left: 20px;
+  font-size: 18px;
+  padding-left: 5px;
+  /* padding: 5px; */
   width: 90%;
-  height: 45px;
-  gap: 50px;
+  height: 30px;
   cursor: pointer;
   transition: 0.2s;
 
