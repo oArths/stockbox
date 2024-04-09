@@ -12,6 +12,9 @@ import Solicitacoes from "./pages/Solicitacoes/solicitacoes.jsx";
 import Controle from "./pages/Controle/controle.jsx";
 import Relatorios from "./pages/Relatorios/relatorios.jsx";
 import Catalogacao from "./pages/Catalogacao/catalogacao.jsx";
+import Reset from "./pages/Login/reset.jsx"
+import Pedidos from "./pages/Solicitacoes/pedidos.jsx"
+
 
 const router = createBrowserRouter([
   {
@@ -24,7 +27,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/forgot",
-        element: <Forgot />,
+        element: <Forgot/>,
+      },
+      {
+        path: "/reset/:token",
+        element: <Reset/>,
       },
       {
         path: "/register",
@@ -37,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "/solicitacoes",
         element: <Solicitacoes />,
+      },
+      {
+        path: "/pedidos",
+        element: <Pedidos />,
       },
       {
         path: "/controle",

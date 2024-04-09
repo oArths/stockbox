@@ -2,45 +2,69 @@ import * as S from "./styles";
 import Button from "../../components/buttonLogin/button";
 import login from "../../assets/images/login.svg";
 import Input from "../../components/inputs/input";
-import TextImg from "../../components/textimg/textimg"
-import { useNavigate } from "react-router-dom";
+import TextImg from "../../components/textimg/textimg";
+import { useNavigate, useParams } from "react-router-dom";
 import app from "../../services/api_login";
 import { useState } from "react";
 
-const Forgot = () => {
+const Reset = () => {
   const nav = useNavigate();
+  const {token} = useParams();
+  const [error, setError] = useState('');
+  
   const [ values , setValues] = useState({
-    email: '',
+    newPassword: '',
+    confPassword: '',
+    token
   })
-  const handleSubmit = (event) => {
-    
-    // event.preventDefault();
-    app.post('/forgot-password' , values)
-    .then(res => console.log(res))
-    .catch(res => console.log(res))
 
+  
+    const handleSubmit = (event) => {
+      console.log(values.confPassword)
+      console.log(values.newPassword)
+
+      if(values.newPassword  !== values.confPassword){
+        setError("senhas invalidas ou  diferentes")
+        console.log("erro senha")
+      }
+      else{
+        console.log("senha certa")
+        setError('')
+      app.post('/reset-password' , {newPassword: values.newPassword, token})
+    .then(res => console.log(res))
+    .catch(res => console.log(res.response.data.message))
   }
 
+  }
+  
   return (
     <S.Main>
       <S.Login>
         <S.TitleContainer>
-          <S.Title>Esqueceu?</S.Title>
+          <S.Title>Nova Senha</S.Title>
           <S.SubTitle>
-            Esqueceu a senha? Insira suas informações e aguarde o email.
+            Insira uma nova senha para acessar sua conta
           </S.SubTitle>
         </S.TitleContainer>
         <S.ContainerErro>
         <S.InputContainer>
-          <Input placeholder="E-mail" type="text" onchange={e => setValues({...values, email: e.target.value})}/>
+          <Input 
+          placeholder="Nova Senha" 
+          type="password"
+          onChange={e => setValues({...values, newPassword: e.target.value})}/>
+          <Input 
+          placeholder="Confirmar Senha" 
+          type="password"
+          onChange={e => setValues({...values, confPassword: e.target.value})}/>
         </S.InputContainer>
+        {error && <S.TextErro>{error}</S.TextErro>} 
         </S.ContainerErro>
 
+        
+
         <S.ButtonContainer>
-          <Button Title="Recuperar"onClick={() => {
-            console.info('teste')
-            handleSubmit()
-            }}/>
+          <Button Title="Entrar"
+          onClick={() => {handleSubmit()}}/>
           <S.SubText>
             Se{" "}
             <S.Link
@@ -70,11 +94,11 @@ const Forgot = () => {
       </S.Login>
       <S.ImgContainer>
         <S.ImgTextContainer>
-          <TextImg/>
+        <TextImg/>
         </S.ImgTextContainer>
         <S.Img src={login} alt="Imagem de um estoque" />
       </S.ImgContainer>
     </S.Main>
   );
 };
-export default Forgot;
+export default Reset;

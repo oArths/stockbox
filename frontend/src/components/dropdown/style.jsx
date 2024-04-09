@@ -1,6 +1,9 @@
 import styled from "styled-components";
+import * as I from 'iconoir-react';
 
 export const Container = styled.div`
+    display: flex;
+    flex-direction: row;
     position: relative;
     user-select: none;
     align-items: center;
@@ -8,14 +11,14 @@ export const Container = styled.div`
 
 `;
 export const Title = styled.text`
-    width: 100px;
+    width: 130px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 10px;
     border: 0.5px solid rgb(182, 181, 181);
     border-radius: 10px;
-    box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.06) ;
+    /* box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.06) ; */
     font-size: 15px;
     font-weight: bold;
     color: #333;
@@ -30,7 +33,7 @@ export const ContainerOp = styled.div`
     left: 0px;
     padding: 10px;
     background-color: aliceblue;
-    box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.06) ;
+    /* box-shadow: 3px 3px 5px 1px rgba(0,0,0,0.06) ; */
     font-weight: 500;
     color: #333;
     width: 80%;
@@ -45,4 +48,18 @@ export const Op = styled.text`
     &:hover{
     background-color: #e0e8f0;
 }
+`;
+export const IconConatiner = styled.div`
+align-items: center;
+position: absolute;
+left:120px;
+bottom: 3px;
+
+`;
+export const Trash = styled(I.XmarkCircle)`
+    width: 20px;
+  color: rgb(163, 161, 161);
+
+
+
 `;

@@ -36,10 +36,7 @@ export const ImgTextContainer = styled.div`
   bottom: 15%;
   margin-left: 45px;
 `;
-export const TextImage = styled.text`
-  font-size: 200%;
-  color: white;
-`;
+
 export const Img = styled.img`
   max-width: 98%;
   max-height: auto;
@@ -61,7 +58,7 @@ export const TitleContainer = styled.div`
 `;
 export const Title = styled.text`
   width: 100%;
-  font-size: 55px;
+  font-size: 40px;
   font-weight: bold;
 `;
 export const SubTitle = styled.text`
@@ -69,11 +66,23 @@ export const SubTitle = styled.text`
   color: #737373;
   width: 100%;
 `;
+export const ContainerErro = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+ width: 65%;
+ gap: 2px;
+`;
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 65%;
+  width: 100%;
   gap: 30px;
+`;
+export const TextErro = styled.text`
+text-align: center;
+font-size: 12px;
+color: #d81212;
 `;
 
 export const ButtonContainer = styled.div`
@@ -94,7 +103,7 @@ export const Link = styled.a`
   color: #4e8fd9;
 `;
 export const TermsContainer = styled.div`
-  margin-top: 70px;
+  margin-top: 45px;
   width: 300px;
   text-align: center;
 `;

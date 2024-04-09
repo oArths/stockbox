@@ -1,10 +1,28 @@
 import * as S from "./styles";
-import Button from "../../components/button/button";
+import Button from "../../components/buttonLogin/button";
 import login from "../../assets/images/login.svg";
 import Input from "../../components/inputs/input";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import app from "../../services/api_login";
+import { Import } from "iconoir-react";
+import TextImg from "../../components/textimg/textimg";
+
 const Register = () => {
   const nav = useNavigate();
+  const [ values , setValues] = useState({
+    usuNome: '',
+    email: '',
+    senha: '',
+  })
+  const handleSubmit = (event) => {
+    
+    // event.preventDefault();
+    app.post('/signup' , values)
+    .then(res => console.log(res))
+    .catch(res => console.log(res.response.data.message))
+
+  }
   return (
     <S.Main>
       <S.Login>
@@ -14,15 +32,19 @@ const Register = () => {
             Entre com sua conta e tenha acesso a um mundo de possibilidades.
           </S.SubTitle>
         </S.TitleContainer>
-
+        <S.ContainerErro>
         <S.InputContainer>
-          <Input placeholder="Nome" type="text" />
-          <Input placeholder="E-mail" type="text" />
-          <Input placeholder="Senha" type="password" />
+          <Input placeholder="Nome" type="text" onchange={e => setValues({...values, usuNome: e.target.value})}/>
+          <Input placeholder="E-mail" type="text" onchange={e => setValues({...values, email: e.target.value})} />
+          <Input placeholder="Senha" type="password" onchange={e => setValues({...values, senha: e.target.value})}/>
         </S.InputContainer>
+        </S.ContainerErro>
 
         <S.ButtonContainer>
-          <Button Title="Entrar" />
+          <Button Title="Criar" onClick={() => {
+            console.info('teste')
+            handleSubmit()
+            }}/>
           <S.SubText>
             Faça seu{" "}
             <S.Link
@@ -52,9 +74,8 @@ const Register = () => {
       </S.Login>
       <S.ImgContainer>
         <S.ImgTextContainer>
-          <S.TextImage>
-            Lorem ipsum dolor sit amet consectetur adipiscing elit.
-          </S.TextImage>
+        <TextImg/>
+
         </S.ImgTextContainer>
         <S.Img src={login} alt="Imagem de um estoque" />
       </S.ImgContainer>
