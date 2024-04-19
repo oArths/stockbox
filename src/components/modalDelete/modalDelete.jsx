@@ -1,14 +1,13 @@
 import * as S from "./style"
 import ButtonConfirm from "../ButtonConfirm/ButtonConfirm";
 
-const ModalDelete = ({isOpen, setOpenModal}) => {
+const ModalDelete = ({isOpen, setOpenModal, Title,Info}) => {
     if (isOpen){
         return( <S.Body >
             <S.Container >
                 <S.ContainerInfo>
-                <S.Title>Deseja Excluir?</S.Title>
-                <S.Info>Após a exlusão os dados serão
-                    perdidos permanentemente 
+                <S.Title>{Title}</S.Title>
+                <S.Info>{Info}
                 </S.Info>
                 </S.ContainerInfo>
                 <S.ButtonContainer>
@@ -20,3 +19,10 @@ const ModalDelete = ({isOpen, setOpenModal}) => {
     }
 }
 export default ModalDelete;
+
+
+
+// <S.Title>Deseja Excluir?</S.Title>
+//                 <S.Info>Após a exlusão os dados serão
+//                     perdidos permanentemente 
+//                 </S.Info>

@@ -1,5 +1,4 @@
-import * as S from "./style";
-import Nav from "../../components/nav/nav";
+import * as S from "./novoPedidoStyle";
 import Header from "../../components/header/header";
 import { useState } from "react";
 import Search from "../../components/search/search";
@@ -7,12 +6,13 @@ import data from "../Data/tabledb.json";
 import Pagination from "../../components/pagination/pagination"
 import CountItem from "../../components/countItem/countItem";
 import ButtonConfirm from "../../components/ButtonConfirm/ButtonConfirm";
+import ModalDelete from "../../components/modalDelete/modalDelete";
 
 
   const limit = 7;
   const total =  data.length;
 
-const Saida = () => {
+const NovoPedido = () => {
 
   
       const [searchTerm, setSearchTerm] = useState("");
@@ -23,6 +23,8 @@ const Saida = () => {
       const [selectedItems, setSelectedItems] = useState([]);
       const [itemValor, setItemValor] = useState();
       const [error, setError] = useState('');
+      const [openModal, setOpenModal] = useState(false);
+
 
   const normalizeString = (str) => {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
@@ -71,18 +73,17 @@ const handleNovoValor = (novoValor) => {
     <S.Body>
       <Header />
       <S.Main>
-        <Nav />
         <S.Container>
           <S.Section>
-            <S.Title>Saida</S.Title>
+            <S.Title>Entrada</S.Title>
             <S.Header>
                 <S.Option>
-                <S.Op  select={opset === true ? 'true' : undefined} onClick={() => setOpset(true) }>Saida</S.Op>
+                <S.Op  select={opset === true ? 'true' : undefined} onClick={() => setOpset(true) }>Entrada</S.Op>
                 <S.Op select={opset === false ? 'false' : undefined} onClick={() => setOpset(false)}>Adicionar</S.Op>
               </S.Option>
                {opset ? (
                 <S.ButtonOp>
-               <ButtonConfirm Title="Adicionar Saida"  width="150px" backgroundColor="#38AD68" fontSize="15px"/>
+               <ButtonConfirm Title="Adicionar Item"  width="150px" backgroundColor="#38AD68" fontSize="15px"  onClick={() => setOpenModal(true)}/>
                </S.ButtonOp>
                )
                :
@@ -103,7 +104,8 @@ const handleNovoValor = (novoValor) => {
                 <S.ThHeader>Nome</S.ThHeader>
                 <S.ThHeader>Categoria</S.ThHeader>
                 <S.ThHeader >Quantidade</S.ThHeader>       
-                <S.ThHeader >Saida</S.ThHeader>       
+                <S.ThHeader >Valor</S.ThHeader>       
+                <S.ThHeader >Adicionar</S.ThHeader>       
                 <S.ThHeader isLast>⠀⠀⠀⠀⠀⠀⠀</S.ThHeader>       
                 </S.TrHeader>
               </S.TableHeader>
@@ -115,6 +117,9 @@ const handleNovoValor = (novoValor) => {
                           <S.Test>{value}</S.Test>
                         </S.StyledTableCell>
                       ))}
+                      <S.StyledTableCell >
+                        R$10,06
+                 </S.StyledTableCell>
                       <S.StyledTableCell >
                      <CountItem onValorChange={handleNovoValor}  />  
                  </S.StyledTableCell>
@@ -129,7 +134,12 @@ const handleNovoValor = (novoValor) => {
                   ))}
               </S.TableBody>
             </S.StyledTable>
-            <S.PaginationConatiner>
+            <S.PaginationConatinerValor>
+                <S.ContainerValor>
+                    <S.Valor>
+                    Valor Total:  R$ 1000
+                    </S.Valor>
+                </S.ContainerValor>
             {selectedItems.length > limit && (
               <Pagination 
                 limit={limit}
@@ -138,7 +148,7 @@ const handleNovoValor = (novoValor) => {
                 setOffset={setOffSet1}
               />
             )}
-            </S.PaginationConatiner>
+            </S.PaginationConatinerValor>
           </S.TableContainer>)
           :
        ( <S.TableContainer>
@@ -183,10 +193,11 @@ const handleNovoValor = (novoValor) => {
                />
             </S.PaginationConatiner>
           </S.TableContainer>)}
+          <ModalDelete isOpen={openModal} setOpenModal={() => setOpenModal(!openModal)} Title="Deseja Finalizar?" Info="Após confirmar a finalização o pedido sera enviado" />
         </S.Container>
       </S.Main>
     </S.Body>
   );
 };
 
-export default Saida;
+export default NovoPedido;

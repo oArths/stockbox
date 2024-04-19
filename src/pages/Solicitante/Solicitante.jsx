@@ -7,12 +7,14 @@ import Search from "../../components/search/search";
 import Folder from "../../assets/images/folder.svg"
 import data from "../Data/tabledb.json";
 import Pagination from "../../components/pagination/pagination"
+import ButtonConfirm from "../../components/ButtonConfirm/ButtonConfirm";
 import { useNavigate } from "react-router-dom";
+import ModalDelete from "../../components/modalDelete/modalDelete";
 
 
   const limit = 7;
   const total =  data.length;
-const solicitacoes = () => {
+const solicitante = () => {
   const nav = useNavigate();
 
   
@@ -20,8 +22,9 @@ const solicitacoes = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredData, setFilteredData] = useState(data);
   const [offset, setOffSet] = useState(0)
-  const [offset1, setOffSet1] = useState(0)
   const [opset, setOpset] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
+
 
   const normalizeString = (str) => {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
@@ -62,13 +65,12 @@ const solicitacoes = () => {
     <S.Body>
       <Header />
       <S.Main>
-        <Nav />
         <S.Container>
           <S.Section>
             <S.Title>Solicitações</S.Title>
             <S.Header>
               <S.Option>
-                <S.Op  select={opset === true ? 'true' : undefined} onClick={() =>{ console.log("true"); setOpset(true)} }>Abertos</S.Op>
+                <S.Op  select={opset === true ? 'true' : undefined} onClick={() =>{ console.log("true"); setOpset(true)} }>Status</S.Op>
                 <S.Op select={opset === false ? 'false' : undefined} onClick={() => {setOpset(false); console.log("falseee")}}>Historico</S.Op>
               </S.Option>
               <S.InsertContainer>
@@ -81,6 +83,9 @@ const solicitacoes = () => {
                 <S.FilterContainer>
                   <Filter filterop={filterop} setFilterop={setFilterop} />
                 </S.FilterContainer>
+                <S.ButtonContainer >
+                <ButtonConfirm Title="Novo" backgroundColor="#38AD68" fontSize="15px" width="120px" onClick={() => {nav("/novopedido")}}/>
+               </S.ButtonContainer>
               </S.InsertContainer>
             </S.Header>
           </S.Section>
@@ -93,11 +98,12 @@ const solicitacoes = () => {
                 <S.ThHeader>Nome</S.ThHeader>
                 <S.ThHeader>Departamento</S.ThHeader>
                 <S.ThHeader >Data</S.ThHeader>       
+                <S.ThHeader ></S.ThHeader>       
                 <S.ThHeader isLast></S.ThHeader>       
                 </S.TrHeader>
               </S.TableHeader>
               <S.TableBody>
-              {filteredData.slice(offset1,offset1 + limit).map((item, index) => (
+              {filteredData.slice(offset,offset + limit).map((item, index) => (
               <S.TrBody key={index}>
                 {Object.entries(item).map(([key, value], index) => (
                   <S.StyledTableCell key={index} >
@@ -106,7 +112,17 @@ const solicitacoes = () => {
                     </S.Test>
                     </S.StyledTableCell>
                 ))}
-                <S.StyledTableCell onClick={()=> {nav("/pedidos")}}>
+                <S.StyledTableCell >
+                  <S.ButtonContainer>
+                  <S.ButtonEdit onClick={() => setOpenModal(true)}>
+                  <S.Edit/>
+                  </S.ButtonEdit>
+                  <S.ButtonDelete onClick={() => setOpenModal(true)}>
+                 <S.Trash/>   
+                 </S.ButtonDelete>  
+                 </S.ButtonContainer>           
+                 </S.StyledTableCell>
+                <S.StyledTableCell onClick={()=> {nav("/pedido")}}>
                    <S.ImageCell src={Folder} alt="Imagem" onClick={() => handleImageClick(item.id)} />
                 </S.StyledTableCell>
               </S.TrBody>
@@ -117,8 +133,8 @@ const solicitacoes = () => {
                <Pagination 
                limit={limit}
                total={total} 
-               offset={offset1}
-               setOffset={setOffSet1}
+               offset={offset}
+               setOffset={setOffSet}
                />
             </S.PaginationConatiner>
           </S.TableContainer>) 
@@ -161,10 +177,11 @@ const solicitacoes = () => {
              />
           </S.PaginationConatiner>
         </S.TableContainer>)}
+        <ModalDelete isOpen={openModal} setOpenModal={() => setOpenModal(!openModal)} Title="Deseja Excluir?" Info="Após a exlusão os dados serão perdidos permanentemente " />
         </S.Container>
       </S.Main>
     </S.Body>
   );
 };
 
-export default solicitacoes;
+export default solicitante;

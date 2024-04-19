@@ -18,6 +18,7 @@ const Entrada = () => {
       const [searchTerm, setSearchTerm] = useState("");
       const [filteredData, setFilteredData] = useState(data);
       const [offset, setOffSet] = useState(0);
+      const [offset1, setOffSet1] = useState(0);
       const [opset, setOpset] = useState(true);
       const [selectedItems, setSelectedItems] = useState([]);
       const [itemValor, setItemValor] = useState();
@@ -108,7 +109,7 @@ const handleNovoValor = (novoValor) => {
                 </S.TrHeader>
               </S.TableHeader>
               <S.TableBody>
-            {selectedItems.slice(offset,offset + limit).map((item, index) => (
+            {selectedItems.slice(offset1,offset1 + limit).map((item, index) => (
                     <S.TrBody key={index}>
                       {Object.entries(item).map(([key, value], index) => (
                         <S.StyledTableCell key={index}>
@@ -137,8 +138,8 @@ const handleNovoValor = (novoValor) => {
               <Pagination 
                 limit={limit}
                 total={selectedItems.length} 
-                offset={offset}
-                setOffset={setOffSet}
+                offset={offset1}
+                setOffset={setOffSet1}
               />
             )}
             </S.PaginationConatiner>

@@ -7,7 +7,7 @@ export const HeaderContainer = styled.div`
   width: 100%;
   height: 99px;
   background-color: #f4f7ff;
-  box-shadow: 200px 0px 5px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
   user-select: none;
 `;
 export const Logo = styled.text`

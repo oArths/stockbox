@@ -16,7 +16,9 @@ import Reset from "./pages/Login/reset.jsx"
 import Pedidos from "./pages/Solicitacoes/pedidos.jsx"
 import Entrada from "./pages/Movimentacao/entrada.jsx"; 
 import Saida from "./pages/Movimentacao/saida.jsx"; 
-
+import Solicitante from "./pages/Solicitante/Solicitante.jsx";
+import NovoPedido from "./pages/Solicitante/novoPedido.jsx";
+import Pedido from "./pages/Solicitante/pedido.jsx";
 
 const router = createBrowserRouter([
   {
@@ -70,6 +72,18 @@ const router = createBrowserRouter([
       {
         path: "/catalogacao",
         element: <Catalogacao />,
+      },
+      {
+        path: "/solicitante",
+        element: <Solicitante />,
+      },
+      {
+        path: "/novopedido",
+        element: <NovoPedido />,
+      },
+      {
+        path: "/pedido",
+        element: <Pedido />,
       },
     ],
   },

@@ -22,6 +22,7 @@ const Controle = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredData, setFilteredData] = useState(data);
   const [offset, setOffSet] = useState(0);
+  const [offset1, setOffSet1] = useState(0);
   const [opset, setOpset] = useState(true);
   const [openModal, setOpenModal] = useState(false);
   const [isActive, setIsActive] = useState(false);
@@ -106,7 +107,7 @@ const Controle = () => {
                 </S.TrHeader>
               </S.TableHeader>
               <S.TableBody>
-              {filteredData.slice(offset,offset + limit).map((item, index) => (
+              {filteredData.slice(offset1,offset1 + limit).map((item, index) => (
               <S.TrBody key={index}>
                 {Object.entries(item).map(([key, value], index) => (
                   <S.StyledTableCell key={index} >
@@ -133,8 +134,8 @@ const Controle = () => {
                <Pagination 
                limit={limit}
                total={total} 
-               offset={offset}
-               setOffset={setOffSet}
+               offset={offset1}
+               setOffset={setOffSet1}
                />
             </S.PaginationConatiner>
           </S.TableContainer>) 
@@ -177,7 +178,7 @@ const Controle = () => {
              />
           </S.PaginationConatiner>
         </S.TableContainer>)}
-        <ModalDelete isOpen={openModal} setOpenModal={() => setOpenModal(!openModal)} />
+        <ModalDelete isOpen={openModal} setOpenModal={() => setOpenModal(!openModal)} Title="Deseja Excluir?" Info="Após a exlusão os dados serão perdidos permanentemente " />
         </S.Container>
       </S.Main>
     </S.Body>

@@ -138,7 +138,7 @@ const Catalogacao = () => {
             </S.PaginationConatiner>
           </S.TableContainer>
         <Modal title={'Informações de Departamento'} isOpen={open} setOpenModal={() => setOpen(!open)}/>
-        <ModalDelete isOpen={openModal} setOpenModal={() => setOpenModal(!openModal)} />
+        <ModalDelete isOpen={openModal} setOpenModal={() => setOpenModal(!openModal)} Title="Deseja Excluir?" Info="Após a exlusão os dados serão perdidos permanentemente" />
 
         </S.Container>
       </S.Main>
