@@ -5,7 +5,6 @@ export const Container = styled.div`
   max-height: 900px;
   background-color: #f4f7ff;
   border-right:  0.5px solid rgba(179, 178, 178, 0.2);
-  /* box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.2); */
   display: flex;
   justify-content: center;
   align-items: start;

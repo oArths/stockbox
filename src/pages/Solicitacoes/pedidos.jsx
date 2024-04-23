@@ -27,8 +27,18 @@ const Pedidos = () => {
       <S.Main>
         <Nav />
         <S.Container>
+       
           <S.SectionConatiner>
+            <S.ContainerHeader >
+            <S.Back onClick={()=> {nav("/solicitacoes")}}>
+              <S.IconBack/>
+                 {/* Voltar */}
+            </S.Back> 
+            
             <S.Title>Pedidos</S.Title>
+
+            </S.ContainerHeader>
+            
             <S.ButtonContainer>
                <ButtonConfirm Title="Finalinzar" backgroundColor="#f22b2b" fontSize="15px"  width="120px"/>
                <ButtonConfirm Title="Confirmar" backgroundColor="#38AD68" fontSize="15px" width="120px"/>

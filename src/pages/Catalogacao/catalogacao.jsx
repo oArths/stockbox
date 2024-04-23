@@ -2,7 +2,6 @@ import * as S from "./style";
 import Nav from "../../components/nav/nav";
 import Header from "../../components/header/header";
 import Filter from "../../components/filter/filter";
-import Folder from "../../assets/images/folder.svg"
 import { useState } from "react";
 import Search from "../../components/search/search";
 import data from "../Data/tabledb.json";
@@ -25,8 +24,10 @@ const Catalogacao = () => {
   const [offset, setOffSet] = useState(0);
   const [opset, setOpset] = useState(true);
   const [openModal, setOpenModal] = useState(false);
-  const [open, setOpen] =  useState(false);
-  const [isActive, setIsActive] = useState(false);
+  const [openModal1, setOpenModal1] = useState(false);
+  const [openModal2, setOpenModal2] = useState(false);
+  const [openModal3, setOpenModal3] = useState(false);
+  const [isActive, setIsActiveCategoria] = useState(false);
 
 
 
@@ -63,6 +64,7 @@ const Catalogacao = () => {
         });
         setFilteredData(newFilteredData);
       };
+   
  
 
   return (
@@ -85,9 +87,10 @@ const Catalogacao = () => {
                   <Filter filterop={filterop} setFilterop={setFilterop} />
                 </S.FilterContainer>
                 <S.ButtonContainer >
-                <Dropdown Title="Adicionar" 
-                OP1="Departamento" onClickOP1={e => {setOpen(true), setIsActive(false)}} 
-                OP2="Categoria" onClickOP2={e => {nav("/saida"), setIsActive(false)}}/>
+                <Dropdown Title="Adicionar" PlusOP={true}
+                OP1="Departamento" onClickOP1={() => setOpenModal1(true)} 
+                OP2="Categoria"  onClickOP2={() => setOpenModal2(true)}
+                OP3="Funcionario"  onClickOP3={() => setOpenModal3(true)}/>
                </S.ButtonContainer>
               </S.InsertContainer>
             </S.Header>
@@ -137,7 +140,9 @@ const Catalogacao = () => {
                />
             </S.PaginationConatiner>
           </S.TableContainer>
-        <Modal title={'Informações de Departamento'} isOpen={open} setOpenModal={() => setOpen(!open)}/>
+        <Modal title={'Informações do Departamento'} placeholder="Digite o nome" func={true} isOpen={openModal1} setOpenModal={setOpenModal1}/>
+        <Modal title={'Informações da Categoria'} placeholder="Digite o nome" func={true} isOpen={openModal2} setOpenModal={setOpenModal2}/>
+        <Modal title={'Informações do Funcionario'} placeholder="Digite o nome" func={false} isOpen={openModal3} setOpenModal={setOpenModal3}/>
         <ModalDelete isOpen={openModal} setOpenModal={() => setOpenModal(!openModal)} Title="Deseja Excluir?" Info="Após a exlusão os dados serão perdidos permanentemente" />
 
         </S.Container>

@@ -4,6 +4,9 @@ const Header = () => {
   return (
     <S.HeaderContainer>
       <S.Logo>Stock Box</S.Logo>
+      <S.IconContainer>
+          
+      </S.IconContainer>
     </S.HeaderContainer>
   );
 };

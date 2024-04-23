@@ -10,6 +10,7 @@ import Pagination from "../../components/pagination/pagination"
 import { useNavigate } from "react-router-dom";
 import Dropdown from "../../components/dropdown/dropdown";
 import ModalDelete from "../../components/modalDelete/modalDelete";
+import ButtonConfirm from "../../components/ButtonConfirm/ButtonConfirm";
 
 
   const limit = 7;
@@ -87,9 +88,18 @@ const Controle = () => {
                   <Filter filterop={filterop} setFilterop={setFilterop} />
                 </S.FilterContainer>
                 <S.ButtonContainer >
-               <Dropdown Title="Adicionar" 
+               {opset ?(<ButtonConfirm 
+               Title="Adicionar"  
+               width="100px" 
+               height="40px"
+               backgroundColor="#38AD68" 
+               fontSize="15px"
+              //  onClick={}
+               />)
+               :
+               (<Dropdown Title="Movimento" 
                OP1="Entrada" onClickOP1={e => {nav("/entrada"), setIsActive(false)}} 
-               OP2="saida" onClickOP2={e => {nav("/saida"), setIsActive(false)}}/>
+               OP2="saida" onClickOP2={e => {nav("/saida"), setIsActive(false)}}/>)}
                </S.ButtonContainer>
               </S.InsertContainer>
             </S.Header>

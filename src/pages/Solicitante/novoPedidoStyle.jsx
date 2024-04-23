@@ -21,9 +21,9 @@ export const Container = styled.div`
 export const Section = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
+  margin-top: 20px;
   width: 90%;
-  gap: 20px;
+  gap: 10px;
 `;
 export const SectionConatiner = styled.div`
   display: flex;
@@ -38,6 +38,15 @@ export const Title = styled.div`
   font-size: 35px;
   font-weight: bold;
 `;
+export const ContainerBreadCrumbs = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  gap: 5px;
+  width: 100%;
+  height: 20px;
+`;
+
 export const Header = styled.div`
   display: flex;
   flex-direction: row;
@@ -110,11 +119,16 @@ export const ThHeader = styled.th`
   border-top-right-radius: ${({ isLast }) => (isLast ? "5px" : "0")};
 `;
 
-export const TrHeader = styled.tr``;
+export const TrHeader = styled.tr`
+`;
 
-export const TableBody = styled.tbody``;
+export const TableBody = styled.tbody`
+/* background-color: aqua; */
+
+`;
 export const Vazio = styled.div``;
 export const TrBody = styled.tr`
+
   &:hover {
     background-color: #fbfbfb;
   }

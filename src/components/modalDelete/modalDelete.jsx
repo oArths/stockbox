@@ -20,9 +20,3 @@ const ModalDelete = ({isOpen, setOpenModal, Title,Info}) => {
 }
 export default ModalDelete;
 
-
-
-// <S.Title>Deseja Excluir?</S.Title>
-//                 <S.Info>Após a exlusão os dados serão
-//                     perdidos permanentemente 
-//                 </S.Info>

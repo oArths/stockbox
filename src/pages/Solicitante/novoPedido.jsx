@@ -75,7 +75,8 @@ const handleNovoValor = (novoValor) => {
       <S.Main>
         <S.Container>
           <S.Section>
-            <S.Title>Entrada</S.Title>
+
+            <S.Title>Novo Pedido</S.Title>
             <S.Header>
                 <S.Option>
                 <S.Op  select={opset === true ? 'true' : undefined} onClick={() => setOpset(true) }>Entrada</S.Op>

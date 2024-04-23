@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import * as I from "iconoir-react";
 
 export const Overlay = styled.div`
     display: flex;
@@ -12,57 +13,69 @@ export const Overlay = styled.div`
     right: 0;
     background-color: rgba(0,0,0,0.6);
 `;
+
+
+
 export const Modal = styled.div`
   display: flex;
   flex-direction: column;
-  //width: 100%;
-  margin-top: 100px;
-  margin-bottom: 100px;
   background-color: #EBEBEB;
-  width: 60vw;
-  //height: 100px;
-
+  width: 40vw;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
-  /* top: 50%; right: 50%;
-  transform: translate(50%,-50%); */
-  margin-left: auto;
-  margin-right: auto;
+  
 `;
 export const ContainerM = styled.div`
   width: 90%;
-
-  /* top | right | bottom | left */
-  margin: 1.5% 5% 5% 5%;
+  margin: 1.5% 5% 0% 5%;
 `
+
+export const IconClose = styled(I.Xmark)`
+ color: #ff0000;
+ width: 2rem;
+ height: 2rem;
+`;
 export const Close = styled.button`
-  //display: flex
   background-color: rgba(0,0,0,0.0);
-  width: 20px;
   cursor: pointer;
 
-  margin-left: 10px;
-  margin-top: 10px;
+
 `;
+export const ContainerHeader = styled.div`
+margin-top: 20px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+width: 100%;
+
+`;
+export const header = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+width: 90%;
+`;
+
+
 export const HeaderM = styled.h2`
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
 `
 export const TitleM = styled.h2`
-  font-family: 'Exo 2', sans-serif;
   font-weight: 700;
   font-size: 20px;
-  //text-transform: capitalize;
-
   color: #000000;
 `;
 export const Switch = styled.div`
   display: flex;
+  align-items: center;
   justify-content: right;
 `
 export const SwitchText = styled.text`
-  font-family: 'Exo 2', sans-serif;
   font-weight: 400;
 
   color: #6F6F6F;
@@ -71,55 +84,52 @@ export const SwitchText = styled.text`
 
 export const Div = styled.div`
     display: flex;
-    //width: 100%;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: end;
+    align-items: center;
+    margin-top: 20px;
+
 `
 export const Form = styled.div`
   display: flex;
   flex-direction: column;
-  width: 65%;
+  width: 100%;
   gap: 1rem;
 `
 export const Text = styled.h3`
-  font-family: 'Exo 2', sans-serif;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 18px;
 
   color: #000000;
 `;
 export const Input = styled.input`
-  font-family: 'Exo 2', sans-serif;
   font-weight: 400;
-  font-size: 15px;
-
+  font-size: 18px;
   color: #000000;
-
-  //width: 100%;
-
-  /* top | right | bottom | left */
-  padding: 1rem;
+  padding: 0.8rem;
   background-color: #D9D9D9;
   outline: none;
-  text-transform: capitalize;
   margin-bottom: 1rem;
+  border-radius: 5px;
 
-  width: 60%;
 `
 export const Textarea = styled.textarea`
-  font-family: 'Exo 2', sans-serif;
   font-weight: 400;
-  font-size: 15px;
-
+  font-size: 18px;
   color: #000000;
-
-  width: 90%;
-
-  /* top | right | bottom | left */
+  border-radius: 5px;
   padding: 1rem;
   background-color: #D9D9D9;
   resize: none;
 `
+export const ConatinerButton = styled.div`
+display: flex;
+justify-content: right;
+align-items: center;
+width: 100%;
+padding: 40px 0px;
+
+`;
 export const AddButton = styled.button`
   background-color: #D9D9D9;
   color: #000;
@@ -127,8 +137,6 @@ export const AddButton = styled.button`
   padding: 0.8rem;
   font-weight: 700;
   font-size: 20px;
-  margin-left: 1rem;
-
   transition: 
     background-color 300ms ease 0s,
     color 300ms ease 0s;

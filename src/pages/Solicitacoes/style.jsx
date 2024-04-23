@@ -8,7 +8,23 @@ import {
   getRadiusStatus,
   getBackgroudSelect,
 } from "./utils";
+import * as I from "iconoir-react"
+export const Back = styled.div`
+display: flex;
+align-items: center;
+font-size: 14px;
+color: #1f75e6;
+cursor: pointer;
+`;
+export const IconBack = styled(I.Undo)`
+width: 25px;
+/* color: #c5c5c5; */
+color: #1f75e6;
 
+`;
+
+export const ContainerHeader = styled.div`
+`;
 export const Body = styled.div`
   display: flex;
   flex-direction: column;
