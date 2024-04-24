@@ -19,6 +19,7 @@ import Saida from "./pages/Movimentacao/saida.jsx";
 import Solicitante from "./pages/Solicitante/Solicitante.jsx";
 import NovoPedido from "./pages/Solicitante/novoPedido.jsx";
 import Pedido from "./pages/Solicitante/pedido.jsx";
+import MoviPedido from "./pages/Controle/movpedidos.jsx";
 
 const router = createBrowserRouter([
   {
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
       {
         path: "/novopedido",
         element: <NovoPedido />,
+      },
+      {
+        path: "/movipedido",
+        element: <MoviPedido />,
       },
       {
         path: "/pedido",

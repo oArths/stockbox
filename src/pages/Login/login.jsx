@@ -12,8 +12,9 @@ const Login = () => {
     email: '',
     senha: '',
   })
+  
   const handleSubmit = (event) => {
-    
+    console.log(values)
     // event.preventDefault();
     app.post('/login' , values)
     .then(res => console.log(res))
@@ -34,8 +35,8 @@ const Login = () => {
         
         <S.ContainerErro>
         <S.InputContainer>
-          <Input placeholder="E-mail" type="text"  onchange={e => setValues({...values, email: e.target.value})} />
-          <Input placeholder="Senha" type="password" onchange={e => setValues({...values, senha: e.target.value})}/>
+          <Input placeholder="E-mail" type="text"  onChange={e => setValues({...values, email: e.target.value})} />
+          <Input placeholder="Senha" type="password" onChange={e => setValues({...values, senha: e.target.value})}/>
         </S.InputContainer>
         </S.ContainerErro>
 

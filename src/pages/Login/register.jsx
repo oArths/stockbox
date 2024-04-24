@@ -34,9 +34,9 @@ const Register = () => {
         </S.TitleContainer>
         <S.ContainerErro>
         <S.InputContainer>
-          <Input placeholder="Nome" type="text" onchange={e => setValues({...values, usuNome: e.target.value})}/>
-          <Input placeholder="E-mail" type="text" onchange={e => setValues({...values, email: e.target.value})} />
-          <Input placeholder="Senha" type="password" onchange={e => setValues({...values, senha: e.target.value})}/>
+          <Input placeholder="Nome" type="text" onChange={e => setValues({...values, usuNome: e.target.value})}/>
+          <Input placeholder="E-mail" type="text" onChange={e => setValues({...values, email: e.target.value})} />
+          <Input placeholder="Senha" type="password" onChange={e => setValues({...values, senha: e.target.value})}/>
         </S.InputContainer>
         </S.ContainerErro>
 

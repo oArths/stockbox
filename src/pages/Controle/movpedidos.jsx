@@ -1,4 +1,4 @@
- import * as S from "./style";
+import * as S from "./style";
 import Nav from "../../components/nav/nav";
 import Header from "../../components/header/header";
 import { useState } from "react";
@@ -10,7 +10,7 @@ import ButtonConfirm from "../../components/ButtonConfirm/ButtonConfirm";
 
   const limit = 8;
   const total =  data.length;
-const Pedidos = () => {
+const MoviPedido = () => {
   const nav = useNavigate();
 
   
@@ -28,7 +28,7 @@ const Pedidos = () => {
         <Nav />
         <S.Container>
           <S.SectionConatiner>
-            <S.Title>Pedidos</S.Title>
+            <S.Title>Entrada n°6297327232873</S.Title>
             <S.ButtonContainer>
                <ButtonConfirm Title="Finalinzar" backgroundColor="#f22b2b" fontSize="15px"  width="120px"/>
                <ButtonConfirm Title="Confirmar" backgroundColor="#38AD68" fontSize="15px" width="120px"/>
@@ -76,4 +76,4 @@ const Pedidos = () => {
   );
 };
 
-export default Pedidos;
+export default MoviPedido;

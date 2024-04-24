@@ -32,7 +32,7 @@ const Forgot = () => {
         </S.TitleContainer>
         <S.ContainerErro>
         <S.InputContainer>
-          <Input placeholder="E-mail" type="text" onchange={e => setValues({...values, email: e.target.value})}/>
+          <Input placeholder="E-mail" type="text" onChange={e => setValues({...values, email: e.target.value})}/>
         </S.InputContainer>
         </S.ContainerErro>
 

@@ -10,6 +10,11 @@ export const HeaderContainer = styled.div`
   border-bottom:  0.5px solid rgba(179, 178, 178, 0.2);
   user-select: none;
 `;
+export const ContainerLogo = styled.text`
+  margin-left: 20px;
+  font-size: 25px;
+  font-weight: bold;
+`;
 export const Logo = styled.text`
   margin-left: 20px;
   font-size: 25px;
